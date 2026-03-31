@@ -168,7 +168,12 @@ const FinalInvoice = () => {
       amountPaid,
       balancePayable,
       paymentStatus,
-      payments: []
+      payments: amountPaid > 0
+    ? [{
+        amount: amountPaid,
+        date: new Date().toISOString()
+      }]
+    : []
     }
 
     await saveInvoice(cleanInvoice)

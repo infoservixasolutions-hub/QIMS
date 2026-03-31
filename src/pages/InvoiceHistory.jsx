@@ -17,7 +17,13 @@ const InvoiceHistory = () => {
   const loadInvoices = async () => {
     try {
       const data = await getInvoices()
-      setInvoices([...data])
+      setInvoices(
+  [...data].sort((a, b) => {
+    const numA = Number(a.invoiceNo.split('-')[1])
+    const numB = Number(b.invoiceNo.split('-')[1])
+    return numA - numB
+  })
+)
     } catch {
       // Storage not initialized
     }
@@ -32,7 +38,13 @@ const InvoiceHistory = () => {
   const refresh = async () => {
     const updated = await getInvoices()
 
-    setInvoices([...updated])
+    setInvoices(
+  [...updated].sort((a, b) => {
+    const numA = Number(a.invoiceNo.split('-')[1])
+    const numB = Number(b.invoiceNo.split('-')[1])
+    return numA - numB
+  })
+)
 
     if (selected) {
       const fresh = updated.find(

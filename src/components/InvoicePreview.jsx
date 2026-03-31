@@ -1,4 +1,5 @@
 import companyProfile from '../utils/companyProfile'
+import logo from '../assets/logo.png'
 
 const InvoicePreview = ({
   invoice,
@@ -77,12 +78,8 @@ const InvoicePreview = ({
         </div>
 
         {companyProfile.logo && (
-          <img
-            src={companyProfile.logo}
-            alt="Company Logo"
-            width="250"
-            height="120"
-          />
+          <img src={logo} alt="logo" width="250" height="120" />
+        
         )}
       </div>
 

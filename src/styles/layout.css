@@ -222,3 +222,18 @@ tr:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 0 10px rgba(59,130,246,0.5);
 }
+
+/* ===== STICKY FOOTER FIX ===== */
+html, body, #root {
+  height: 100%;
+}
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.layout-content {
+  flex: 1;
+}

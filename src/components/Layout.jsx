@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 
 const Layout = ({ children, tab, setTab, onLogout }) => {
   return (
-    <div>
+    <div className="layout-container">
 
       {/* HEADER */}
       <div className="header card">
@@ -60,9 +60,11 @@ const Layout = ({ children, tab, setTab, onLogout }) => {
       </div>
 
       {/* CONTENT */}
-      <div style={{ padding: "20px" }}>
-        {children}
-      </div>
+      <div className="layout-content">
+  <div style={{ padding: "20px" }}>
+    {children}
+  </div>
+</div>
 
       <div className="footer">
   © {new Date().getFullYear()} Servixa Solutions (Pvt) Ltd. All rights reserved.
