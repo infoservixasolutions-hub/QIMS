@@ -113,14 +113,14 @@ const QuotationPreview = ({
 
             return (
               <tr key={i}>
-                <td style={{ ...tdStyle, verticalAlign: 'top' }}>
+                <td style={{ ...tdStyle, verticalAlign: 'top', color: '#000000' }}>
                   <strong>{item.description}</strong>
 
                   {item.subItems?.length > 0 && (
                     <ul style={{
                       marginTop: '5px',
                       marginLeft: '15px',
-                      fontSize: '13px'
+                      fontSize: '13px',
                     }}>
                       {item.subItems.map((sub, index) =>
                         sub.text && <li key={index}>{sub.text}</li>
@@ -129,23 +129,23 @@ const QuotationPreview = ({
                   )}
                 </td>
 
-                <td style={{ ...tdStyle, textAlign: 'center' }}>
+                <td style={{ ...tdStyle, textAlign: 'center', color: '#000000' }}>
                   {item.qty}
                 </td>
 
-                <td style={{ ...tdStyle, textAlign: 'right' }}>
+                <td style={{ ...tdStyle, textAlign: 'right', color: '#000000' }}>
                   {item.price.toFixed(2)}
                 </td>
 
-                <td style={{ ...tdStyle, textAlign: 'center' }}>
+                <td style={{ ...tdStyle, textAlign: 'center', color: '#000000' }}>
                   {item.vat > 0 ? `${item.vat}%` : '—'}
                 </td>
 
-                <td style={{ ...tdStyle, textAlign: 'right' }}>
+                <td style={{ ...tdStyle, textAlign: 'right', color: '#000000' }}>
                   {vatAmount.toFixed(2)}
                 </td>
 
-                <td style={{ ...tdStyle, textAlign: 'right' }}>
+                <td style={{ ...tdStyle, textAlign: 'right', color: '#000000' }}>
                   {lineTotal.toFixed(2)}
                 </td>
               </tr>
@@ -161,8 +161,8 @@ const QuotationPreview = ({
 
             {showSubtotal && (
               <tr>
-                <td style={{ textAlign: 'right' }}>Subtotal</td>
-                <td style={{ textAlign: 'right', width: '150px' }}>
+                <td style={{ textAlign: 'right', color: '#000000' }}>Subtotal</td>
+                <td style={{ textAlign: 'right', width: '150px', color: '#000000' }}>
                   Rs. {subtotal.toFixed(2)}
                 </td>
               </tr>
@@ -170,8 +170,8 @@ const QuotationPreview = ({
 
             {showVat && vatTotal > 0 && (
               <tr>
-                <td style={{ textAlign: 'right' }}>VAT Total</td>
-                <td style={{ textAlign: 'right' }}>
+                <td style={{ textAlign: 'right', color: '#000000' }}>VAT Total</td>
+                <td style={{ textAlign: 'right', color: '#000000' }}>
                   Rs. {vatTotal.toFixed(2)}
                 </td>
               </tr>
@@ -179,10 +179,10 @@ const QuotationPreview = ({
 
             {showDiscount && discountAmount > 0 && (
               <tr>
-                <td style={{ textAlign: 'right' }}>
+                <td style={{ textAlign: 'right', color: '#000000' }}>
                   Discount {discountType === 'percentage' ? `(${discountValue}%)` : ''}
                 </td>
-                <td style={{ textAlign: 'right', color: 'red' }}>
+                <td style={{ textAlign: 'right', color: 'red', color: '#000000' }}>
                   - Rs. {discountAmount.toFixed(2)}
                 </td>
               </tr>
@@ -192,10 +192,10 @@ const QuotationPreview = ({
               <tr style={{
                 fontWeight: 'bold',
                 background: '#eaf1ff',
-                borderTop: '2px solid #2563eb'
+                borderTop: '2px solid #2563eb',
               }}>
-                <td style={{ textAlign: 'right' }}>Grand Total</td>
-                <td style={{ textAlign: 'right' }}>
+                <td style={{ textAlign: 'right', color: '#000000' }}>Grand Total</td>
+                <td style={{ textAlign: 'right', color: '#000000' }}>
                   Rs. {grandTotal.toFixed(2)}
                 </td>
               </tr>
