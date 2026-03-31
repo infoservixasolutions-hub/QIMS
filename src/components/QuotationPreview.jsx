@@ -215,7 +215,7 @@ const QuotationPreview = ({
         <h4 style={{ color: '#1e3a8a' }}>Terms & Conditions</h4>
         {terms && terms.length > 0 && (
   <div style={{ marginTop: "20px" }}>
-    <h4>Terms & Conditions</h4>
+    
     <ul>
       {terms.map((t, i) => (
         <li key={i}>{t}</li>
