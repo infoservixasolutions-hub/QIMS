@@ -42,6 +42,10 @@ const FinalInvoice = () => {
   const [quotationLoaded, setQuotationLoaded] = useState(false)
   const [customers, setCustomers] = useState([])
 
+  const [discountType, setDiscountType] = useState(null)
+const [discountValue, setDiscountValue] = useState(0)
+const [discountAmount, setDiscountAmount] = useState(0)
+
   const [client, setClient] = useState({
     name: '',
     company: '',
@@ -105,6 +109,10 @@ const FinalInvoice = () => {
     setQuotation(q)
     setClient(q.client)
 
+    setDiscountType(q.discountType || null)
+setDiscountValue(q.discountValue || 0)
+setDiscountAmount(q.discountAmount || 0)
+
     setItems(
       (q.items || []).map(i => ({
         description: i.description,
@@ -125,7 +133,7 @@ const FinalInvoice = () => {
     0
   )
 
-  const grandTotal = subtotal + vatTotal
+  const grandTotal = subtotal + vatTotal - discountAmount
 
   const balancePayable = grandTotal - amountPaid
 
@@ -162,6 +170,9 @@ const FinalInvoice = () => {
       date: new Date().toLocaleDateString(),
       client,
       items,
+      discountType,
+  discountValue,
+  discountAmount,
       subtotal,
       vatTotal,
       grandTotal,
@@ -440,6 +451,9 @@ const clearFields = () => {
             items,
             subtotal,
             vatTotal,
+            discountType,
+    discountValue,
+    discountAmount,
             grandTotal,
             amountPaid,
             balancePayable,
