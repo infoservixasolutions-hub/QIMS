@@ -48,7 +48,7 @@ const Layout = ({ children, tab, setTab, onLogout }) => {
             className={`nav-btn ${tab === "ledger" ? "active" : ""}`}
             onClick={() => setTab("ledger")}
           >
-            Ledger
+            Income Summary
           </button>
         </div>
 
