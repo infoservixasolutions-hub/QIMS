@@ -180,9 +180,7 @@ const QuotationPreview = ({
           <p><strong>Account Type:</strong> {companyProfile.bank.accountType}</p>
           <p><strong>Account Name:</strong> {companyProfile.bank.accountName}</p>
           <p><strong>Account Number:</strong> {companyProfile.bank.accountNumber}</p>
-          {companyProfile.bank.swift && (
-            <p><strong>SWIFT Code:</strong> {companyProfile.bank.swift}</p>
-          )}
+          
         </div>
       )}
 
