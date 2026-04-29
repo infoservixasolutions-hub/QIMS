@@ -6,10 +6,11 @@ const companyProfile = {
   logo: "/src/assets/logo.png",
 
   bank: {
-    bankName: "Sampath Bank",
-    branch: "Delgoda",
-    accountName: "M.A. Murshid",
-    accountNumber: "1202 5751 8739"
+    bankName: "Commercial Bank",
+    branch: "Padukka",
+    accountType: "Current Account",
+    accountName: "SERVIXA SOLUTIONS (PVT) LTD",
+    accountNumber: "1001087977"
   }
 }
 

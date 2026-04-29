@@ -177,6 +177,7 @@ const QuotationPreview = ({
           <h4 style={{ color: '#1e3a8a' }}>Bank Details</h4>
           <p><strong>Bank:</strong> {companyProfile.bank.bankName}</p>
           <p><strong>Branch:</strong> {companyProfile.bank.branch}</p>
+          <p><strong>Account Type:</strong> {companyProfile.bank.accountType}</p>
           <p><strong>Account Name:</strong> {companyProfile.bank.accountName}</p>
           <p><strong>Account Number:</strong> {companyProfile.bank.accountNumber}</p>
           {companyProfile.bank.swift && (
