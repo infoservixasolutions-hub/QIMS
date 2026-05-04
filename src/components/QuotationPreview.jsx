@@ -23,12 +23,15 @@ const QuotationPreview = ({
     <div
       id="quotation-pdf"
       style={{
-        padding: '25px',
-        width: '700px',
+        padding: '10px',
+        width: '794x',
+        height: '1123px',
+        overflow: 'hidden',
         background: 'linear-gradient(135deg, #d4e4ff, #ffffff)',
         border: '1px solid #b6ccff',
         fontFamily: 'Arial',
-        color: '#0f172a'
+        color: '#0f172a',
+        margin: 'auto'
       }}
     >
 
@@ -162,7 +165,7 @@ const QuotationPreview = ({
       </div>
 
       {/* TERMS */}
-      <div style={boxLight}>
+      <div style={{boxLight, marginTop: '2px'} }>
         <h4 style={{ color: '#1e3a8a' }}>Terms & Conditions</h4>
         {terms.length > 0 && (
           <ul>
@@ -173,13 +176,13 @@ const QuotationPreview = ({
 
       {/* BANK */}
       {companyProfile.bank && (
-        <div style={box}>
+        <div style={{box, marginTop: '2px' }}>
           <h4 style={{ color: '#1e3a8a' }}>Bank Details</h4>
-          <p><strong>Bank:</strong> {companyProfile.bank.bankName}</p>
-          <p><strong>Branch:</strong> {companyProfile.bank.branch}</p>
-          <p><strong>Account Type:</strong> {companyProfile.bank.accountType}</p>
-          <p><strong>Account Name:</strong> {companyProfile.bank.accountName}</p>
-          <p><strong>Account Number:</strong> {companyProfile.bank.accountNumber}</p>
+          <p style={bankText}><strong>Bank:</strong>         {companyProfile.bank.bankName}</p>
+          <p style={bankText}><strong>Branch:</strong> {companyProfile.bank.branch}</p>
+          <p style={bankText}><strong>Account Type:</strong> {companyProfile.bank.accountType}</p>
+          <p style={bankText}><strong>Account Name:</strong> {companyProfile.bank.accountName}</p>
+          <p style={bankText}><strong>Account Number:</strong> {companyProfile.bank.accountNumber}</p>
           
         </div>
       )}
@@ -196,15 +199,15 @@ const QuotationPreview = ({
 /* ================= STYLES ================= */
 
 const box = {
-  marginTop: '15px',
+  marginTop: '10px',
   padding: '10px',
   background: '#eaf1ff',
   border: '1px solid #b6ccff'
 }
 
 const boxLight = {
-  marginTop: '15px',
-  padding: '10px',
+  marginTop: '10px',
+  padding: '5px',
   background: '#f0f6ff',
   border: '1px solid #b6ccff'
 }
@@ -247,6 +250,12 @@ const footer = {
   fontSize: '12px',
   textAlign: 'center',
   color: '#1e3a8a'
+}
+
+const bankText = {
+  margin: '2px 0',     // 👈 reduces vertical gap
+  lineHeight: '1.2',
+  marginLeft: '25px'   // 👈 tighter text spacing
 }
 
 export default QuotationPreview
