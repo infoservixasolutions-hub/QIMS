@@ -30,7 +30,7 @@ const InvoicePreview = ({
     <div
       id="quotation-pdf"
       style={{
-        padding: '25px',
+        padding: '15px',
         width: '700px',
         position: 'relative',
         background: 'linear-gradient(135deg, #d4e4ff, #ffffff)',
@@ -72,6 +72,7 @@ const InvoicePreview = ({
           <h2 style={{ color: '#1e3a8a', margin: 0 }}>
             {companyProfile.name}
           </h2>
+          <h4 style={{marginTop: '-2px'}}>Integrated Electrical, Electronic, Software, Automotive Technical Solutions & Repair Services</h4>
           <p>{companyProfile.address}</p>
           <p>{companyProfile.phone}</p>
           <p>{companyProfile.email}</p>
@@ -85,12 +86,29 @@ const InvoicePreview = ({
 
       {/* INVOICE INFO */}
       <div style={{
-        marginTop: '15px',
+        marginTop: '5px',
         padding: '10px',
         background: '#eaf1ff',
         border: '1px solid #b6ccff'
       }}>
-        <strong>Invoice No:</strong> INV-{invoiceNo}<br />
+       
+       <div
+  style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+  }}
+>
+  <div>
+    <strong>Invoice No:</strong> INV-{invoiceNo}
+  </div>
+
+  <div style={{ textAlign: 'right' }}>
+    <strong>PO Ref No:</strong> 100303
+  </div>
+</div>
+
         {quotationNo ? (
           <><strong>Related Quotation:</strong> QT-{quotationNo}<br /></>
         ) : (
@@ -108,7 +126,7 @@ const InvoicePreview = ({
 
       {/* CLIENT INFO */}
       <div style={{
-        marginTop: '15px',
+        marginTop: '5px',
         padding: '10px',
         background: '#f0f6ff',
         border: '1px solid #b6ccff'
@@ -121,9 +139,9 @@ const InvoicePreview = ({
       {/* ITEMS TABLE */}
       <table
         width="100%"
-        cellPadding="6"
+        cellPadding="2"
         style={{
-          marginTop: '15px',
+          marginTop: '5px',
           borderCollapse: 'collapse',
           background: '#ffffff',
           border: '1px solid #b6ccff'
@@ -151,12 +169,12 @@ const InvoicePreview = ({
 
             return (
               <tr key={i}>
-                <td style={{color: '#000000'}}>{item.description}</td>
-                <td style={{ textAlign: 'center', color: '#000000' }}>{qty}</td>
-                <td style={{ textAlign: 'right', color: '#000000' }}>{price.toFixed(2)}</td>
-                <td style={{ textAlign: 'center', color: '#000000' }}>{vat > 0 ? `${vat}%` : '—'}</td>
-                <td style={{ textAlign: 'right', color: '#000000' }}>{vatAmount.toFixed(2)}</td>
-                <td style={{ textAlign: 'right', color: '#000000' }}>{lineTotal.toFixed(2)}</td>
+               <td style={{ color: '#000000', padding: '3px 6px', lineHeight: '1.1' }}>{item.description}</td>
+               <td style={{ color: '#000000', padding: '3px 6px', lineHeight: '1.1' }}>{qty}</td>
+                <td style={{ color: '#000000', padding: '3px 6px', lineHeight: '1.1' }}>{price.toFixed(2)}</td>
+                <td style={{ color: '#000000', padding: '3px 6px', lineHeight: '1.1' }}>{vat > 0 ? `${vat}%` : '—'}</td>
+                <td style={{ color: '#000000', padding: '3px 6px', lineHeight: '1.1' }}>{vatAmount.toFixed(2)}</td>
+                <td style={{ color: '#000000', padding: '3px 6px', lineHeight: '1.1' }}>{lineTotal.toFixed(2)}</td>
               </tr>
             )
           })}
@@ -164,8 +182,8 @@ const InvoicePreview = ({
       </table>
 
       {/* TOTALS */}
-      <div style={{ marginTop: '15px' }}>
-        <table width="100%" cellPadding="6" style={{ borderCollapse: 'collapse' }}>
+      <div style={{ marginTop: '5px' }}>
+        <table width="100%" cellPadding="2" style={{ borderCollapse: 'collapse' }}>
           <tbody>
 
             {showSubtotal && (
@@ -228,6 +246,29 @@ const InvoicePreview = ({
 
           </tbody>
         </table>
+         <div style={{ maxWidth: "50%" }}>
+    <p style={{ margin: 0, marginTop:'1px' }}>
+      <strong>Warranty:</strong> 01 Month
+    </p>
+  </div>
+
+<div
+  style={{
+    width: "260px",
+    margin: "40px auto 0 auto",
+    textAlign: "center",
+  }}
+>
+  <div
+    style={{
+      borderTop: "1px solid #000",
+      paddingTop: "5px",
+      fontWeight: "bold",
+    }}
+  >
+    Issued By
+  </div>
+</div>
       </div>
 
       {/* FOOTER */}

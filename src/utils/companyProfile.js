@@ -1,7 +1,7 @@
 const companyProfile = {
   name: "Servixa Solutions (Pvt) Ltd",
   address: "No 47/A, Colombo Road, Padukka",
-  phone: "+94 76 649 5799",
+  phone: "+94 77 11 5262",
   email: "info.servixasolutions@gmail.com",
   logo: "/src/assets/logo.png",
 
